@@ -53,21 +53,24 @@ Recipe.create(
     steps: "Preheat oven to 350°. In a large bowl, combine potatoes, soup, sour cream, 1-3/4 cups cheddar cheese and the Parmesan cheese. Place in a greased 3-qt. baking dish. Sprinkle with remaining cheddar cheese. Bake, uncovered, until bubbly and cheese is melted, 40-45 minutes. Let stand 5 minutes before serving.",
     image_url:"https://drive.google.com/uc?id=1ocOm__U7moQQCEtCHAIpBtCsm1mxR8Ms",
     category_id: 5,
-    user_id: rand(1..5)
+    user_id: rand(1..5),
+    cuisine_id: 1
  )
  Recipe.create(
     name: "Shorcut Split Pea Soup",
     steps: "In a large saucepan, bring the water, bouillon granules and thyme to a boil. Thinly slice celery ribs and finely chop the leaves; set leaves aside. Add celery ribs and carrots to water mixture; simmer, uncovered, for 5-8 minutes or until tender. Stir in the soup, ham and celery leaves;",
     image_url: "https://drive.google.com/uc?id=11q-LyUZiwGjEhtflVRnkxuCOSfzz-nfk",
     category_id: 3,
-    user_id: rand(1..5)
+    user_id: rand(1..5),
+    cuisine: 2
  )
  Recipe.create(
     name: "Tasty Onion Chicken",
     steps: "In a shallow bowl, combine butter, Worcestershire sauce and mustard. Place onions in another shallow bowl. Dip chicken in butter mixture, then coat with onions. Place in a greased 11x7-in. baking dish; drizzle with remaining butter mixture. Bake, uncovered, at 400° for 20-25 minutes or until a thermometer reads 165°.",
     image_url: "https://drive.google.com/uc?id=1SU9exencf_e1-RP18wtrXVFzSBcOYu62",
     category_id: 3,
-    user_id: rand(1..5)
+    user_id: rand(1..5),
+    cuisine_id: 
  )
  Recipe.create(
     name: "Quick White Chili",
