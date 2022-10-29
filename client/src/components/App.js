@@ -6,9 +6,12 @@ import Login from './Login';
 import RecipeList from './RecipeList';
 import Tips from './Tips';
 import { Route, Switch } from "react-router-dom";
+import { UserContext } from './user'
+import React, {useState, useContext} from 'react'
+
 
 function App() {
-
+  const { user, setUser } = useContext(UserContext);
 
   return (
     <div className="App">
