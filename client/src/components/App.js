@@ -13,19 +13,19 @@ function App() {
   return (
     <div className="App">
 
-        <NavBar />
+<NavBar />
         <Switch>
           <Route exact path="/recipes">
             <RecipeList />
           </Route>
           <Route exact path="/signup">
-            <Signup/>
+           {user?<Tips/>:<Signup onLogin={setUser}/>} 
           </Route>
           <Route exact path="/login">
-            <Login/>  
+          {user?<Home user={user}/>:<Login onLogin={setUser}/>}  
           </Route>
           <Route exact path="/addRecipe">
-           <NewRecipeForm/>
+            {user?<NewRecipeForm />:<Login onLogin={setUser}/>}
           </Route>
           <Route exact path="/">
             <Home />
