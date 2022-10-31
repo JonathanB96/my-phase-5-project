@@ -1,10 +1,3 @@
-import React from 'react'
-
-export default function Login() {
-  return (
-    <div>Login</div>
-  )
-}
 import React, {useState}from 'react'
 import "../styles/Signup.css"
 
