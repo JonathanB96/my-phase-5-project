@@ -1,6 +1,6 @@
 import React,{useEffect, useContext, useState} from 'react'
 import { UserContext } from './user'
-import '../styles/Tips.css'
+import '../styles/AddRecipe.css'
 import top_Img from '../styles/images/mise-en-plase.jpg'
 
 export default function Tips() {
@@ -15,6 +15,19 @@ export default function Tips() {
           
           });
       }, []);
+      function download(){
+
+        fetch("/pages/download")
+        .then((r) => {
+         return r.blob()
+        })
+        .then((data)=>{ 
+         let a = document.createElement("a")
+        a.href = window.URL.createObjectURL(data)
+        a.download = "9_cooking_tips"
+        a.click()       
+      })
+      }
 
   return <>
     <div class='tip-container'>
@@ -32,7 +45,7 @@ export default function Tips() {
               </div>
               <div className="text-1">
                   <h1>Cooking tips for beginners</h1>
- <br/>
+                  <button id="btn" onClick={download}>Download PDF file</button> <br/>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis ad, optio quasi molestiae esse nam saepe libero animi, ullam sit ipsa suscipit magni reiciendis dicta rerum, error rem! Nostrum                  ?</div>
 
               <div className="div-2"></div>
