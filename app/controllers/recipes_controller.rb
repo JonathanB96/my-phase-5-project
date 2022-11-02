@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
         user = User.find_by(id: session[:user_id])
         if user
             recipe = user.recipes.find(params[:id])
-            recipe.update(recipe_params)
+            recipe.update(params.permit(:steps))
            render json: recipe
             
         else

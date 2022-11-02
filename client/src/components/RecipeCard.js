@@ -7,7 +7,7 @@ import del from '../styles/images/delete.jpg'
 export default function Card({recipe, recipeList, setRecipeList}) {
   const [btn, setBtn] = useState(true)
   const { user, setUser } = useContext(UserContext);
-
+  const [newSteps, setNewSteps] = useState("")
   //changing state when the btn is clicked
  
   function handleClick(){
@@ -32,6 +32,37 @@ export default function Card({recipe, recipeList, setRecipeList}) {
       })
     
     }
+    function handleChange(e){
+        setNewSteps(e.target.value)
+
+    }
+    function handleEdit(e){
+        const clickedReview = recipeList.find((recipe)=>{return recipe.user.username === user.username})
+        e.preventDefault()
+        fetch(`/recipes/${recipe.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({steps: newSteps}
+          ),
+        }).then((r) => r.json())
+        .then((newRecipe)=>{
+              console.log(newRecipe)
+              const newList = recipeList.map((recipe)=>{
+            if(recipe.id === newRecipe.id){
+              return newRecipe
+            }
+            else {
+              return recipe
+            }
+          })
+         setRecipeList(newList)
+         setNewSteps("")
+       
+        })    
+      }  
+    
 
 
   return <>
@@ -41,15 +72,26 @@ export default function Card({recipe, recipeList, setRecipeList}) {
             <h4>{recipe.name}</h4>
             <div className={!btn? "overlay2": "steps"}> 
               <p><small>{recipe.steps}</small></p>
+              {user&&user.username===recipe.user.username?
+               <form onSubmit={handleEdit} className={!btn? "overlay2": "steps"}>
+               <textarea value={newSteps} onChange={handleChange}>
+
+               </textarea>
+               <input type="submit" value="Edit"/>
+             </form>:null}
+             
               
             </div>
-       
+
+                 
            
         </div>
      <div id='card-bottom'>
-     {/* {user&&user.username===recipe.user.username?<button id="del-btn"onClick={handleDelete}>Delete</button>:null}  */}
-      
-    <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button>      
+     {user&&user.username===recipe.user.username?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
+     {/* {user&&user.username===recipe.user.username? <button onClick={handleClick} id="edit-btn">Edit</button>:null} */}
+    <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button> 
+
+
     </div>   
     
   </div>
