@@ -2,7 +2,7 @@ import React,{useState, useContext} from 'react'
 import '../styles/Signup.css'
 import { Link } from "react-router-dom";
 import { UserContext } from './user'
-// import { useHistory } from 'react-router-dom'
+
 
 export default function NewRecipeForm() {
   const [recipeName, setRecipeName] = useState("")
@@ -19,7 +19,7 @@ export default function NewRecipeForm() {
     category:"",
     user_id:"",
     cuisine:""}
-  // const history = useHistory()
+
 
   function handleName(e){
     setRecipeName(e.target.value)

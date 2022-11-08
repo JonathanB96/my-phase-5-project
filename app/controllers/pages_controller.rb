@@ -56,7 +56,6 @@ class PagesController < ApplicationController
       send_data(pdf.render, filename: 'tips.pdf', type: 'application/pdf')
     end
   
-    def preview
-    end
+   
   end
   

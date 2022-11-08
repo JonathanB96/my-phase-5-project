@@ -15,16 +15,7 @@ export default function Home() {
       {user?<div className='main'> <h1 className='main-msg'>Welcome back {user.username} </h1><Link to="/recipes" className='myButton'>See all recipes</Link></div>
     :<Link to="/recipes" className='myButton'>See all recipes</Link>}
      
-      <div className='main'>
-        
-        {/* {user?<Link to="/recipes" className='myButton'>See all recipes</Link>:<div> 
-        <h1 className='main-msg' id='no-user'>Create an account today</h1>        
-        <p>Already a member? <Link to="/login" className='button-23'>Login</Link></p>
-        </div>} */}
-       
-        
-
-        
+      <div className='main'>       
         
        
         <div className="main-container">

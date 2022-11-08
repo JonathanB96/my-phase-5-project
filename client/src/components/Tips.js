@@ -1,7 +1,6 @@
 import React,{useEffect, useContext, useState} from 'react'
 import { UserContext } from './user'
 import '../styles/AddRecipe.css'
-import top_Img from '../styles/images/mise-en-plase.jpg'
 
 export default function Tips() {
     const { user, setUser } = useContext(UserContext);

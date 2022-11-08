@@ -1,8 +1,6 @@
 import React, {useState, useContext} from 'react'
 import '../styles/Card.css'
-import {  Link } from "react-router-dom";
 import { UserContext } from './user'
-import del from '../styles/images/delete.jpg'
 
 export default function Card({recipe, recipeList, setRecipeList}) {
   const [btn, setBtn] = useState(true)
@@ -18,7 +16,7 @@ export default function Card({recipe, recipeList, setRecipeList}) {
 
   function handleDelete(){   
     console.log(recipeList)
-    // const clickedReview = reviewList.find((review)=>{return review.user.username === user.username})
+   
     fetch(`/recipes/${recipe.id}`,{method: 'DELETE'})
     .then(r=>{
       if(r.ok){
@@ -26,7 +24,7 @@ export default function Card({recipe, recipeList, setRecipeList}) {
           return r.id!= recipe.id          
         })
         setRecipeList(newRecipeList)  
-        // setHasAddedReview(false)   
+        
 
       }
       })
@@ -88,7 +86,7 @@ export default function Card({recipe, recipeList, setRecipeList}) {
         </div>
      <div id='card-bottom'>
      {user&&user.username===recipe.user.username?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
-     {/* {user&&user.username===recipe.user.username? <button onClick={handleClick} id="edit-btn">Edit</button>:null} */}
+     
     <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button> 
 
 

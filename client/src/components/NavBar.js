@@ -3,8 +3,6 @@ import "../styles/NavBar.css"
 import { NavLink, Link } from "react-router-dom";
 import { UserContext } from './user'
 
-// import { useHistory } from 'react-router';
-
 const linkStyles = {
     display: "inline-block",
     width: "50px",
@@ -93,14 +91,6 @@ export default function Header() {
         Add recipe
       </NavLink></li>
   </ul>
-
-    
-     
-      
-     
-
-
-
 
   <div id="logo-div" style={{float :"right",
 marginRight: "10%", }}>
