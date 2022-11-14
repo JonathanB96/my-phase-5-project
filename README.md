@@ -1,4 +1,4 @@
-# Gameland
+# RECIPE VIEWER
 
 ## Overview
 
@@ -13,7 +13,7 @@ This App supports:
 * File Download
 * React context
 
-[view site](https://my-phase-5-project.herokuapp.com/)
+[view site](https://recipe-viewer-final-project.herokuapp.com/)
 
 
 ## Technologies Used
@@ -26,7 +26,7 @@ This App supports:
 A user can either register to the site or log into an existing account.
 In the 'recipes' section, each 'recipe card' has a 'show recipe' button that displays  the steps of that recipe. A search bar is provided to help you find a particular recipe by name.
 
-![](https://github.com/JonathanB96/my-phase-4-project/blob/main/Phase-4-gif.gif)
+![](https://github.com/JonathanB96/my-phase-5-project/blob/main/phase%205%20gif.gif)
 
 ## Acknowledgements
 * Responsive menu: [CSS Portal](https://www.cssportal.com/css3-menu-generator/)
