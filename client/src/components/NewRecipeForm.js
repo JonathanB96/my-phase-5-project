@@ -59,6 +59,10 @@ export default function NewRecipeForm() {
     }).then((r)=>r.json())
       .then((newReview)=>{
         console.log(newReview)
+        setRecipeName("")
+        setCategory("")
+        setImgUrl("")
+        setCuisine("")
       })  
     
     }
@@ -102,7 +106,7 @@ export default function NewRecipeForm() {
     <label>Steps</label>
     <textarea id="steps"  onChange ={handleSteps}
     value={steps} placeholder="Describe the steps of the recipe.." style={{height:"200px"}}></textarea>
-    <Link to="/recipes">See recipes</Link>
+    <Link to="/recipes" className='myButton'>See recipes</Link>
     <input type="submit" value="Submit"/>
     
 
