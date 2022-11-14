@@ -32,7 +32,7 @@ In the 'recipes' section, each 'recipe card' has a 'show recipe' button that dis
 * Responsive menu: [CSS Portal](https://www.cssportal.com/css3-menu-generator/)
 
 * Form styling: [W3Schools](https://www.w3schools.com/)
-* CSS animation: [The App Guru](http://www.theappguruz.com/tag-tools/web/CSSAnimations/)
+* CSS animation: [The App Guru](http://www.theappguruz.com/tag-tools/web/CSSAnimations/) 
 
 
 
