@@ -60,6 +60,21 @@ export default function Card({recipe, recipeList, setRecipeList}) {
        
         })    
       }  
+
+      function addToFavorites(){
+       fetch(`/favorites`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({user_id: user.id,
+        recipe_id: recipe.id}),
+      })
+      .then(r=>r.json())
+      .then((fav)=>{
+        console.log(fav) 
+      })
+      }
     
 
 
@@ -67,7 +82,9 @@ export default function Card({recipe, recipeList, setRecipeList}) {
   <div className='card' style={{backgroundImage: `url(${recipe.image_url})`}}>
   
         <div className="overlay">
+            
             <h4>{recipe.name}</h4>
+            <button id="favorite" onClick={addToFavorites}>Add to Favorites</button> 
             <div className={!btn? "overlay2": "steps"}> 
               <p><small>{recipe.steps}</small></p>
               {user&&user.username===recipe.user.username?
@@ -82,8 +99,9 @@ export default function Card({recipe, recipeList, setRecipeList}) {
             </div>
 
                  
-           
+            
         </div>
+        
      <div id='card-bottom'>
      {user&&user.username===recipe.user.username?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
      
