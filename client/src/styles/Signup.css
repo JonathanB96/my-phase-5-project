@@ -7,6 +7,10 @@
     max-width:700px;
     height: 100px;
     margin-top: 23px;
+    
+  }
+  #addRecipe-form{
+    margin-top: 50px;
   }
   input[type=text], input[type=password] {
       width: 100%;

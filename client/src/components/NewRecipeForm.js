@@ -57,6 +57,7 @@ export default function NewRecipeForm() {
         setRecipeName("")
         setImgUrl("")
         setCuisine("")
+        setSteps("")
       })  
     
     }
@@ -91,9 +92,10 @@ export default function NewRecipeForm() {
     <label>Steps</label>
     <textarea id="steps"  onChange ={handleSteps}
     value={steps} placeholder="Describe the steps of the recipe.." style={{height:"200px"}}></textarea>
+    <div> <input type="submit" value="Submit"/>
     <Link to="/recipes" className='myButton'>See recipes</Link>
-    <input type="submit" value="Submit"/>
-    
+    </div>
+   
 
   </form>
 </div> 

@@ -90,6 +90,17 @@ export default function Header() {
       >
         Add recipe
       </NavLink></li>
+      {user? <li> <NavLink
+        to="/userRecipes"
+        exact
+        activeStyle={{
+          background: "#000",
+        }}
+      >
+        My favorites
+      </NavLink>
+      </li>:null}
+     
   </ul>
 
   <div id="logo-div" style={{float :"right",

@@ -49,19 +49,17 @@ export default function UserRecipes() {
   
   <div id="wrapper">
     <h1>My recipes</h1>
-           <div>
+           <h2>
             My Favorites
-           </div>
+           </h2>
             {recipes.map((recipe)=>{
               return <div key={recipe.id} title={recipe.id}>
                   <h2>{recipe.recipe_name}</h2>
                   <p>{recipe.recipe_steps}</p>
-                  <button onClick={deleteFavorite}>Delete</button>
+                  <button className='myButton' onClick={deleteFavorite}>Delete</button>
               </div>
             })}
-           <div>
-            My Recipes
-           </div>
+           
  </div>
 
   
