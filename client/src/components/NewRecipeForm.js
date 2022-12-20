@@ -8,7 +8,6 @@ export default function NewRecipeForm() {
   const [recipeName, setRecipeName] = useState("")
   const [imgUrl, setImgUrl] = useState("")
   const [steps, setSteps] = useState("")
-  const [category, setCategory] = useState("")
   const { user, setUser } = useContext(UserContext);
   const [cuisine, setCuisine] = useState("")
 
@@ -16,7 +15,6 @@ export default function NewRecipeForm() {
     name: "",
     steps:"",
     image_url:"",
-    category:"",
     user_id:"",
     cuisine:""}
 
@@ -33,9 +31,7 @@ export default function NewRecipeForm() {
     setSteps(e.target.value)
 
   }
-  function handleCategory(e){
-    setCategory(e.target.value)
-  }
+
   function handleCuisine(e){
     setCuisine(e.target.value)
 
@@ -46,7 +42,6 @@ export default function NewRecipeForm() {
       formData.name = recipeName
       formData.image_url= imgUrl
       formData.steps= steps
-      formData.category= category
       formData.user_id = user.id
       formData.cuisine = cuisine
 
@@ -60,7 +55,6 @@ export default function NewRecipeForm() {
       .then((newReview)=>{
         console.log(newReview)
         setRecipeName("")
-        setCategory("")
         setImgUrl("")
         setCuisine("")
       })  
@@ -82,15 +76,6 @@ export default function NewRecipeForm() {
     <input type="text"  onChange ={handleUrl}
     value={imgUrl} id="imageUrl" placeholder="Image URL here"/>
 
-    
-    <select value={category} onChange={handleCategory}>
-      <option>Select category</option>
-      <option>Breakfast</option>
-      <option>Lunch</option>
-      <option>Dinner</option>
-      <option>Salad</option>
-      <option>Baked-goods</option>
-    </select>
 
     <select value={cuisine} onChange={handleCuisine}>
       <option>Select cuisine</option>

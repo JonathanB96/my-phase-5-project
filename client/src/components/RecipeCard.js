@@ -6,6 +6,7 @@ export default function Card({recipe, recipeList, setRecipeList}) {
   const [btn, setBtn] = useState(true)
   const { user, setUser } = useContext(UserContext);
   const [newSteps, setNewSteps] = useState("")
+  const [clickedRecipe, setRecipe] = useState(recipe)
   //changing state when the btn is clicked
  
   function handleClick(){
@@ -62,13 +63,14 @@ export default function Card({recipe, recipeList, setRecipeList}) {
       }  
 
       function addToFavorites(){
+        
        fetch(`/favorites`,{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({user_id: user.id,
-        recipe_id: recipe.id}),
+        body: JSON.stringify({recipe_name: recipe.name,
+        recipe_steps: recipe.steps, image_url: recipe.image_url, user_id: user.id, cuisine_id: recipe.cuisine_id})
       })
       .then(r=>r.json())
       .then((fav)=>{

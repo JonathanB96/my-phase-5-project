@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/:id/:recipe_id', to: 'users#create_favorite'
-  delete '/:id/:recipe_id', to: 'users#destroy_favorite'
   get 'pages/download', to: 'pages#download'
   post '/favorites', to: 'favorites#create'
-  get '/:id/favorites', to: 'favorites#index'
-  
+  get '/favorites', to: 'favorites#index'
+  delete '/favorites/:id', to: 'favorites#destroy'
 end

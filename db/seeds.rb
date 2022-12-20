@@ -29,11 +29,6 @@ user5 = User.create(
   )
 
 
-categories = ['Breakfast', 'Lunch', 'Dinner', 'Salad', 'Baked-goods', 'Dessert']
-
-categories.each do |category|
-   Category.create(name: category)
-end
 
 cuisines = ['American', 'Global', 'Cuisine', 'Italian', 'Vegetarian', 'Asian', 'Mexican']
 

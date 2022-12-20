@@ -2,7 +2,6 @@ class RecipesController < ApplicationController
     rescue_from  ActiveRecord::RecordNotFound, with: :not_found_response
     def index
         recipes = Recipe.all 
-
         render json: recipes
     end
 
@@ -22,7 +21,6 @@ class RecipesController < ApplicationController
     
             recipe = Recipe.create(name: params[:name], 
             steps: params[:steps], image_url: params[:image_url],
-            category_id: Category.find_by("name LIKE ?", params[:category]).id, 
             user_id: params[:user_id],
             cuisine_id: Cuisine.find_by("name LIKE ?", params[:cuisine]).id)
             render json: recipe, status: :created
